@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Movies App</title>
+        <link rel="icon" href="https://img.icons8.com/dusk/64/000000/movie-projector.png" />
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        {{>sidebar}}
+        <div class="maincontent">
+            <div id="focusContent">
+                <img src={{data.poster}}>
+                <h1>{{data.name}}<span> ({{data.release}})</span></h1>
+                <p>
+                    {{#each data.genres}}
+                        <span class="genre">{{this}}</span>
+                    {{/each}}
+                </p>
+                <p id="overview">{{data.overview}}</p>
+                <div id="options">
+                    <a href="/edit?id={{data.id}}">EDIT</a>
+                    <a href="/delete?id={{data.id}}">DELETE</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Movies App</title>
+        <link rel="icon" href="https://img.icons8.com/dusk/64/000000/movie-projector.png" />
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        {{>sidebar}}
+        <div class="maincontent">
+            <input id="search" type="text" autocomplete="off" placeholder="Search">
+            <div id="results"></div>
+        </div>
+
+        
+        <script type="text/x-handlebars-template" id="resultsTemplate">
+            <div>
+                {{#each results}}<div class="movie"><h4>{{this._source.name}}</h4></div>{{/each}}
+            </div>
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" charset="utf-8"></script>
+        <script src="./index.js"></script>
+    </body>
+</html>
